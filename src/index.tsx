@@ -17,11 +17,20 @@ function Content() {
 /// Component via Arrow Function
 
 const Content1 = () => (
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus et
-        quam vel aut nemo fuga. Exercitationem sit dolores minus nisi repellat
-        beatae odit eligendi repellendus iste, dolorum soluta ducimus eos.
-    </p>
+    <div>
+        <p>
+            1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            et quam vel aut nemo fuga. Exercitationem sit dolores minus nisi
+            repellat beatae odit eligendi repellendus iste, dolorum soluta
+            ducimus eos.
+        </p>
+        <p>
+            2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            et quam vel aut nemo fuga. Exercitationem sit dolores minus nisi
+            repellat beatae odit eligendi repellendus iste, dolorum soluta
+            ducimus eos.
+        </p>
+    </div>
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
