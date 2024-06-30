@@ -6,6 +6,7 @@ const h1 = React.createElement('h1', { id: 'title' }, 'Hello app')
 const p = React.createElement('p', null, 'Blablabla blabla blablabla')
 
 /// create react element with jsx
+const h2 = <h2 id="title">Hello app with jsx</h2>
 
 const ul = (
     <ul>
@@ -18,6 +19,7 @@ const ul = (
 const app = (
     <div>
         {h1}
+        {h2}
         {p}
         {ul}
     </div>
