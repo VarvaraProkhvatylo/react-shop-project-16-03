@@ -1,29 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-//create react element without jsx
-const h1 = React.createElement('h1', { id: 'title' }, 'Hello app')
-const p = React.createElement('p', null, 'Blablabla blabla blablabla')
+function Title() {
+    return <h1>Hello Title Component</h1>
+}
 
-/// create react element with jsx
-const h2 = <h2 id="title">Hello app with jsx</h2>
-
-const ul = (
-    <ul>
-        <li>List item 1</li>
-        <li>List item 2</li>
-        <li>List item 3</li>
-    </ul>
-)
-
-const app = (
-    <div>
-        {h1}
-        {h2}
-        {p}
-        {ul}
-    </div>
-)
+function Content() {
+    return (
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
+            rem mollitia ipsa unde cupiditate quo laudantium deserunt voluptatem
+            delectus vitae, aliquam at alias dignissimos illum soluta, quae quis
+            error possimus?
+        </p>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<React.StrictMode>{app}</React.StrictMode>)
+root.render(
+    <React.StrictMode>
+        <Title />
+        <Content />
+    </React.StrictMode>
+)
