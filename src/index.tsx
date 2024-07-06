@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 const Title = () => <h1>Hello Title Component</h1>
+const TitleApp = () => <h2> Hello App Component </h2>
+const TitleReact = () => <h2> Hello React Component </h2>
 
 /// Component via Function Declaration
 
@@ -39,6 +41,8 @@ const App = () => {
     return (
         <>
             <Title />
+            <TitleApp />
+            <TitleReact />
             <Content />
             <Content1 />
         </>
