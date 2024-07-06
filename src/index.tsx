@@ -1,9 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const Title = () => <h1>Hello Title Component</h1>
-const TitleApp = () => <h2> Hello App Component </h2>
-const TitleReact = () => <h2> Hello React Component </h2>
+type HeaderProps = {
+    leftPart: string //обов'язкове
+    text?: string //необов'язкове
+    rightPart?: string
+}
+
+const Header = (props: HeaderProps) => {
+    console.log(props)
+    return (
+        <h1>
+            {props.leftPart} {props.text} {props.rightPart}
+        </h1>
+    )
+}
 
 /// Component via Function Declaration
 
@@ -40,9 +51,9 @@ const Content1 = () => (
 const App = () => {
     return (
         <>
-            <Title />
-            <TitleApp />
-            <TitleReact />
+            <Header leftPart="Hello" text="Title" rightPart="Component" />
+            <Header leftPart="Bye-bye" text="App" />
+            <Header leftPart="Hi" />
             <Content />
             <Content1 />
         </>
