@@ -19,7 +19,7 @@ function Content() {
 /// Component via Arrow Function
 
 const Content1 = () => (
-    <div>
+    <React.Fragment>
         <p>
             1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
             et quam vel aut nemo fuga. Exercitationem sit dolores minus nisi
@@ -32,16 +32,16 @@ const Content1 = () => (
             repellat beatae odit eligendi repellendus iste, dolorum soluta
             ducimus eos.
         </p>
-    </div>
+    </React.Fragment>
 )
 
 const App = () => {
     return (
-        <div>
+        <>
             <Title />
             <Content />
             <Content1 />
-        </div>
+        </>
     )
 }
 
