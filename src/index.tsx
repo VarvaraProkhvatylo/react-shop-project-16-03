@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 
 const Title = () => <h1>Hello Title Component</h1>
 
+/// Component via Function Declaration
+
 function Content() {
     return (
         <p>
@@ -33,11 +35,22 @@ const Content1 = () => (
     </div>
 )
 
+const App = () => {
+    return (
+        <div>
+            <Title />
+            <Content />
+            <Content1 />
+        </div>
+    )
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
-        <Title />
+        <App />
+        {/* <Title />
         <Content />
-        <Content1 />
+        <Content1 /> */}
     </React.StrictMode>
 )
