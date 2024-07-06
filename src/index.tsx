@@ -5,13 +5,14 @@ type HeaderProps = {
     leftPart: string //обов'язкове
     text?: string //необов'язкове
     rightPart?: string
+    order?: number
 }
 
 const Header = (props: HeaderProps) => {
     console.log(props)
     return (
         <h1>
-            {props.leftPart} {props.text} {props.rightPart}
+            {props.order} {props.leftPart} {props.text} {props.rightPart}
         </h1>
     )
 }
@@ -51,8 +52,13 @@ const Content1 = () => (
 const App = () => {
     return (
         <>
-            <Header leftPart="Hello" text="Title" rightPart="Component" />
-            <Header leftPart="Bye-bye" text="App" />
+            <Header
+                order={1}
+                leftPart="Hello"
+                text="Title"
+                rightPart="Component"
+            />
+            <Header order={2} leftPart="Bye-bye" text="App" />
             <Header leftPart="Hi" />
             <Content />
             <Content1 />
