@@ -1,3 +1,5 @@
+import './Header.css'
+
 type HeaderProps = {
     leftPart: string //обов'язкове
     text?: string //необов'язкове
@@ -16,14 +18,7 @@ const Header = ({
     color = 'white',
 }: HeaderProps) => {
     return (
-        <h1
-            style={{
-                background: background,
-                color, // якщо ключ та значення співпадають, то значення можна пропустити ShortHandSyntaxis in object property
-                fontSize: '30px',
-                padding: '20px',
-            }}
-        >
+        <h1 className="header">
             {order} {leftPart} {text} {rightPart}
         </h1>
     )
