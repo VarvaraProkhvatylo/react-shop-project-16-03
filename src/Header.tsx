@@ -4,6 +4,7 @@ type HeaderProps = {
     rightPart?: string
     order?: number
     background?: string
+    color?: string
 }
 
 const Header = ({
@@ -12,12 +13,13 @@ const Header = ({
     text,
     rightPart,
     background = 'purple',
+    color = 'white',
 }: HeaderProps) => {
     return (
         <h1
             style={{
                 background: background,
-                color: 'white',
+                color, // якщо ключ та значення співпадають, то значення можна пропустити
                 fontSize: '30px',
                 padding: '20px',
             }}
