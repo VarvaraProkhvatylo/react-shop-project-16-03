@@ -98,3 +98,11 @@ root.render(
         <Content1 /> */}
     </React.StrictMode>
 )
+
+const user = {
+    name: 'Jack',
+    age: 10,
+}
+
+const { name, age } = user
+console.log(name, age)
