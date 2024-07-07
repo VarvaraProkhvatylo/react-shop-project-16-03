@@ -19,7 +19,7 @@ const Header = ({
         <h1
             style={{
                 background: background,
-                color, // якщо ключ та значення співпадають, то значення можна пропустити
+                color, // якщо ключ та значення співпадають, то значення можна пропустити ShortHandSyntaxis in object property
                 fontSize: '30px',
                 padding: '20px',
             }}
