@@ -2,54 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { StringMappingType } from 'typescript'
 import Header from './Header'
-
-type ContentType = {
-    title: string
-    text1: string
-    text2?: string
-}
-
-const Content = ({ title, text1, text2 }: ContentType) => {
-    return (
-        <>
-            <h2> {title} </h2>
-            <p> {text1} </p>
-            <p> {text2} </p>
-        </>
-    )
-}
-/// Component via Function Declaration
-
-// function Content() {
-//     return (
-//         <p>
-//             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae
-//             rem mollitia ipsa unde cupiditate quo laudantium deserunt voluptatem
-//             delectus vitae, aliquam at alias dignissimos illum soluta, quae quis
-//             error possimus?
-//         </p>
-//     )
-// }
-
-/// Component via Arrow Function
-
-const Content1 = () => (
-    <React.Fragment>
-        <h2>Hello world</h2>
-        <p>
-            1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            et quam vel aut nemo fuga. Exercitationem sit dolores minus nisi
-            repellat beatae odit eligendi repellendus iste, dolorum soluta
-            ducimus eos.
-        </p>
-        <p>
-            2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            et quam vel aut nemo fuga. Exercitationem sit dolores minus nisi
-            repellat beatae odit eligendi repellendus iste, dolorum soluta
-            ducimus eos.
-        </p>
-    </React.Fragment>
-)
+import Content from './Content'
 
 const App = () => {
     return (
@@ -62,8 +15,6 @@ const App = () => {
             />
             <Header order={2} leftPart="Bye-bye" text="App" />
             <Header leftPart="Hi" />
-            {/* <Content /> */}
-            {/* <Content1 /> */}
             <Content title="Header 1 Props" text1="paragraph" />
             <Content
                 title="Header 2 Props"
