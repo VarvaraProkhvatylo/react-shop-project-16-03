@@ -1,4 +1,6 @@
 import Header from './Header'
+import Main from './Main'
+import Footer from './Footer'
 import CssBaseline from '@mui/material/CssBaseline'
 
 const App = () => {
@@ -6,6 +8,8 @@ const App = () => {
         <>
             <CssBaseline />
             <Header />
+            <Main />
+            <Footer />
         </>
     )
 }
