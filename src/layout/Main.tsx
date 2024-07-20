@@ -6,7 +6,12 @@ type Props = {}
 const Main = (props: Props) => {
     return (
         <>
-            <Container>
+            <Container
+                sx={{
+                    padding: '30px 0',
+                }}
+                className="main-container"
+            >
                 <ProductsList />
             </Container>
         </>
