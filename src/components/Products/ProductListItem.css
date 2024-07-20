@@ -1,0 +1,16 @@
+.product-features {
+    margin: 10px 0;
+}
+
+.product-title {
+    font-size: 25px;
+}
+
+.btns-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.product-list {
+    display: flex;
+}
