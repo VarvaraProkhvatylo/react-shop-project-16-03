@@ -22,3 +22,13 @@
 .product-image img {
     height: 200px;
 }
+
+.product-quantity {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.product-quantity input {
+    text-align: center;
+}
