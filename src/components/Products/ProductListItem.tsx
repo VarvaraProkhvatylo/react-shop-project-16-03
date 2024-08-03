@@ -30,7 +30,7 @@ const ProductListItem = ({
     //     setColor((prevState) => (prevState === 'green' ? 'red' : 'green'))
     // }
     const toggleDescription = () => {
-        setIsDescriptionShow((prevState) => (prevState === true ? false : true))
+        setIsDescriptionShow((prevState) => !prevState)
     }
 
     return (
