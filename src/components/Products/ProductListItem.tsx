@@ -27,6 +27,12 @@ const ProductListItem = ({
         setCount((prevCount) => prevCount - 1)
     }
 
+    // const [amount, setAmount] = useState<number>(0)
+
+    // const setAmount = () => {
+    //     setAmount(prevAmount + amount)
+    // }
+
     return (
         <>
             <Card variant="outlined" className="product-list-item">
@@ -52,14 +58,7 @@ const ProductListItem = ({
                             -
                         </Button>
                         <TextField size="small" value={count} />
-                        <Button
-                            variant="outlined"
-                            onClick={() =>
-                                setCount((prevCount) => prevCount + 1)
-                            }
-                        >
-                            +
-                        </Button>
+                        <Button variant="outlined">+</Button>
                     </div>
                     <div className="btns-wrapper">
                         <Button variant="outlined">Add to cart</Button>
