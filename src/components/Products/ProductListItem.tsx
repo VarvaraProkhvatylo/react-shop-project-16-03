@@ -26,12 +26,6 @@ const ProductListItem = ({
     const onDecrementClick = () => {
         setCount((prevCount) => prevCount - 1)
     }
-    // const toggleColorChange = () => {
-    //     setColor((prevState) => (prevState === 'green' ? 'red' : 'green'))
-    // }
-    const toggleDescription = () => {
-        setIsDescriptionShow((prevState) => !prevState)
-    }
 
     return (
         <>
@@ -42,21 +36,9 @@ const ProductListItem = ({
                     </div>
                     <h3 className="product-title">{title}</h3>
                     <p className="product-description">{description}</p>
+
                     <div className="product-features">Type: {type}</div>
-                    <div>
-                        <button onClick={toggleDescription}>
-                            {isDescriptionShow ? 'Hide' : 'Show'} description
-                        </button>
-                        {isDescriptionShow ? (
-                            <p className="description">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Voluptatibus non dolorem alias
-                                porro reprehenderit, iste perspiciatis quisquam
-                                nemo facilis id fugiat vel, quaerat dicta aut,
-                                aperiam numquam ducimus at vero!
-                            </p>
-                        ) : null}
-                    </div>
+
                     <div className="product-features">
                         Capacity: {capacity} GB
                     </div>
