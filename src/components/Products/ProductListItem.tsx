@@ -20,14 +20,17 @@ const ProductListItem = ({
     price,
 }: Props) => {
     const [count, setCount] = useState<number>(2)
-    const [color, setColor] = useState<string>('green')
+    // const [color, setColor] = useState<string>('green')
+    const [isDescriptionShow, setIsDescriptionShow] = useState<boolean>(false)
 
     const onDecrementClick = () => {
         setCount((prevCount) => prevCount - 1)
     }
-
-    const toggleColorChange = () => {
-        setColor((prevState) => (prevState === 'green' ? 'red' : 'green'))
+    // const toggleColorChange = () => {
+    //     setColor((prevState) => (prevState === 'green' ? 'red' : 'green'))
+    // }
+    const toggleDescription = () => {
+        setIsDescriptionShow((prevState) => (prevState === true ? false : true))
     }
 
     return (
@@ -41,12 +44,18 @@ const ProductListItem = ({
                     <p className="product-description">{description}</p>
                     <div className="product-features">Type: {type}</div>
                     <div>
-                        <div>
-                            Color: <span className={`${color}`}>{color}</span>
-                        </div>
-                        <button onClick={toggleColorChange}>
-                            Change color
+                        <button onClick={toggleDescription}>
+                            {isDescriptionShow ? 'Hide' : 'Show'} description
                         </button>
+                        {isDescriptionShow ? (
+                            <p className="description">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Voluptatibus non dolorem alias
+                                porro reprehenderit, iste perspiciatis quisquam
+                                nemo facilis id fugiat vel, quaerat dicta aut,
+                                aperiam numquam ducimus at vero!
+                            </p>
+                        ) : null}
                     </div>
                     <div className="product-features">
                         Capacity: {capacity} GB
