@@ -5,7 +5,7 @@ type Props = {
 }
 
 const CartHeader = ({ productsInCart }: Props) => {
-    // console.log(Object.keys(ProductsInCart))
+    console.log(Object.keys(productsInCart))
     return (
         <div>
             {Object.keys(productsInCart).map((productId) => (
