@@ -3,12 +3,12 @@ import ProductListItem from './ProductListItem'
 import { productsArray } from 'utils/productsArray'
 
 type Props = {
-    addProductToCart: (count: number, price: number) => void
+    addProductsToCart: (count: number, price: number) => void
 }
 
 console.log(productsArray)
 
-const ProductsList = ({ addProductToCart }: Props) => {
+const ProductsList = ({ addProductsToCart }: Props) => {
     return (
         <>
             <Typography
@@ -37,7 +37,7 @@ const ProductsList = ({ addProductToCart }: Props) => {
                                 type={type}
                                 capacity={capacity}
                                 price={price}
-                                addProductToCart={addProductToCart}
+                                addProductsToCart={addProductsToCart}
                             />
                         </Grid>
                     )
