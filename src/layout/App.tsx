@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import 'styles/layout.css'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
+import { count } from 'console'
 
 type CartDataType = {
     totalCount: number
@@ -18,6 +19,13 @@ const App = () => {
     })
 
     const addProductToCart = (count: number, price: number) => {
+        setCartData((prevState) => ({
+            totalCount: prevState.totalCount + count,
+            totalPrice: prevState.totalPrice + count * price,
+        }))
+    }
+
+    const addProductToCartNew = (count: number, price: number) => {
         setCartData((prevState) => ({
             totalCount: prevState.totalCount + count,
             totalPrice: prevState.totalPrice + count * price,

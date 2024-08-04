@@ -27,6 +27,10 @@ const ProductListItem = ({
         setCount((prevCount) => prevCount - 1)
     }
 
+    const onIncrementClick = () => {
+        setCount((prevCount) => prevCount + 1)
+    }
+
     // const [amount, setAmount] = useState<number>(0)
 
     // const setAmount = () => {
@@ -58,7 +62,9 @@ const ProductListItem = ({
                             -
                         </Button>
                         <TextField size="small" value={count} />
-                        <Button variant="outlined">+</Button>
+                        <Button variant="outlined" onClick={onIncrementClick}>
+                            +
+                        </Button>
                     </div>
                     <div className="btns-wrapper">
                         <Button variant="outlined">Add to cart</Button>
