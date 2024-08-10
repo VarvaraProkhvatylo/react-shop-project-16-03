@@ -9,6 +9,7 @@ type Props = {
     type: string
     capacity: string
     price: number
+    addProductsToCart: (count: number, id: number) => void
 }
 
 const ProductListItem = ({
@@ -18,16 +19,16 @@ const ProductListItem = ({
     type,
     capacity,
     price,
+    addProductsToCart,
 }: Props) => {
-    const [count, setCount] = useState<number>(2)
-    const [color, setColor] = useState<string>('green')
+    const [count, setCount] = useState<number>(1)
 
     const onDecrementClick = () => {
         setCount((prevCount) => prevCount - 1)
     }
 
-    const toggleColorChange = () => {
-        setColor((prevState) => (prevState === 'green' ? 'red' : 'green'))
+    const onIncrementClick = () => {
+        setCount((prevCount) => prevCount + 1)
     }
 
     return (
@@ -39,35 +40,33 @@ const ProductListItem = ({
                     </div>
                     <h3 className="product-title">{title}</h3>
                     <p className="product-description">{description}</p>
+
                     <div className="product-features">Type: {type}</div>
-                    <div>
-                        <div>
-                            Color: <span className={`${color}`}>{color}</span>
-                        </div>
-                        <button onClick={toggleColorChange}>
-                            Change color
-                        </button>
-                    </div>
+
                     <div className="product-features">
                         Capacity: {capacity} GB
                     </div>
                     <div className="product-price">$ {price}</div>
                     <div className="product-quantity">
-                        <Button variant="outlined" onClick={onDecrementClick}>
+                        <Button
+                            variant="outlined"
+                            onClick={onDecrementClick}
+                            disabled={count <= 1}
+                        >
                             -
                         </Button>
                         <TextField size="small" value={count} />
-                        <Button
-                            variant="outlined"
-                            onClick={() =>
-                                setCount((prevCount) => prevCount + 1)
-                            }
-                        >
+                        <Button variant="outlined" onClick={onIncrementClick}>
                             +
                         </Button>
                     </div>
                     <div className="btns-wrapper">
-                        <Button variant="outlined">Add to cart</Button>
+                        <Button
+                            variant="outlined"
+                            onClick={() => addProductsToCart(count, price)}
+                        >
+                            Add to cart
+                        </Button>
                     </div>
                 </CardContent>
             </Card>
