@@ -66,9 +66,10 @@ export const productsArray:Product[] = [
 ]
 
 
-export const getProductsObject = (array:Product[]) =>array.reduce(
+export const getProductsObject = (array:Product[]) => array.reduce(
     (obj, product) => ({
         ...obj,
         [product.id]: product,
-    }),{}
+    }),
+    {}   ///значення за замовчуванням
 )

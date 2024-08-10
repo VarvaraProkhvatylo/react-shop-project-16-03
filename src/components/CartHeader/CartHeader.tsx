@@ -15,12 +15,25 @@ const CartHeader = ({
 }: Props) => {
     return (
         <div>
-            {Object.keys(productsInCart).map((productId) => (
-                <div key={productId}>
-                    {productsObject[+productId].title}:{' '}
-                    {productsInCart[+productId]}
-                </div>
-            ))}
+            <div>
+                {Object.keys(productsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productsObject[+productId].title}:{' '}
+                        {productsInCart[+productId]}
+                    </div>
+                ))}
+            </div>
+            <div>
+                Total:{' '}
+                {Object.keys(productsInCart).reduce(
+                    (total, productId) =>
+                        total +
+                        productsInCart[+productId] * ///це каунт продукту (див вище)
+                            productsObject[+productId].price,
+                    0
+                )}
+                $
+            </div>
         </div>
     )
 }

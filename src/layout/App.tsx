@@ -23,6 +23,13 @@ const App = () => {
         }))
     }
 
+    // const addCountTotal = ([productsInCart], price: number, count: number) => {
+    //     setCountTotal((prevState) => ({
+    //         ...prevState,
+    //         price: (prevState.price)
+    //     }))
+    // }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
