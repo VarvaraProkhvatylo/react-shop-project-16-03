@@ -2,7 +2,7 @@ import { Container } from '@mui/material'
 import ProductsList from 'components/Products/ProductsList'
 
 type Props = {
-    addProductsToCart: (count: number, price: number) => void
+    addProductsToCart: (count: number, id: number) => void
 }
 
 const Main = ({ addProductsToCart }: Props) => {
