@@ -6,6 +6,7 @@ import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import Home from 'pages/Home/Home'
+import CartPage from 'pages/Cart/CartPage'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -33,6 +34,7 @@ const App = () => {
                     path="/"
                     element={<Home addProductsToCart={addProductsToCart} />}
                 />
+                <Route path="cart" element={<CartPage />} />
             </Routes>
             <Footer />
         </StyledEngineProvider>
