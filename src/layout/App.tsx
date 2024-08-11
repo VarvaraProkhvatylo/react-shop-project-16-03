@@ -9,6 +9,7 @@ import Home from 'pages/Home/Home'
 import CartPage from 'pages/Cart/CartPage'
 import ProductsPage from 'pages/Products/ProductsPage'
 import PaymentPage from 'pages/Payment/PaymentPage'
+import { getProductsObject } from 'utils/productsArray'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -36,7 +37,10 @@ const App = () => {
                     path="/"
                     element={<Home addProductsToCart={addProductsToCart} />}
                 />
-                <Route path="cart" element={<CartPage />} />
+                <Route
+                    path="cart"
+                    element={<CartPage productsInCart={productsInCart} />}
+                />
                 <Route path="payment" element={<PaymentPage />} />
                 <Route path="products" element={<ProductsPage />} />
             </Routes>
