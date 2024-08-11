@@ -1,10 +1,11 @@
 import Header from './Header'
-import Main from './Main'
 import Footer from './Footer'
 import CssBaseline from '@mui/material/CssBaseline'
 import 'styles/layout.css'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
+import { Route, Routes } from 'react-router'
+import Home from 'pages/Home/Home'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -23,18 +24,16 @@ const App = () => {
         }))
     }
 
-    // const addCountTotal = ([productsInCart], price: number, count: number) => {
-    //     setCountTotal((prevState) => ({
-    //         ...prevState,
-    //         price: (prevState.price)
-    //     }))
-    // }
-
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            <Main addProductsToCart={addProductsToCart} />
+            <Routes>
+                <Route
+                    path="/"
+                    element={<Home addProductsToCart={addProductsToCart} />}
+                />
+            </Routes>
             <Footer />
         </StyledEngineProvider>
     )
