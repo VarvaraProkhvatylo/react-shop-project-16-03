@@ -1,6 +1,8 @@
 import { Container } from '@mui/material'
 import { getProductsObject, Product, productsArray } from 'utils/productsArray'
 
+import CartTotal from '../../components/CartTotal/CartTotal'
+
 type Props = {
     productsInCart: {
         [id: number]: number
@@ -27,17 +29,7 @@ const CartPage = ({
                         </div>
                     ))}
                 </div>
-                <div>
-                    Total:{' '}
-                    {Object.keys(productsInCart).reduce(
-                        (total, productId) =>
-                            total +
-                            productsInCart[+productId] *
-                                productsObject[+productId].price,
-                        0
-                    )}
-                    $
-                </div>
+                <CartTotal productsInCart={productsInCart}></CartTotal>
             </Container>
         </div>
     )
