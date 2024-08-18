@@ -9,9 +9,10 @@ type Props = {
     productsInCart: {
         [id: number]: number
     }
+    removeProductFromCart: (id: number) => void
 }
 
-const Header = ({ productsInCart }: Props) => {
+const Header = ({ productsInCart, removeProductFromCart }: Props) => {
     return (
         <AppBar
             position="static"
@@ -23,7 +24,10 @@ const Header = ({ productsInCart }: Props) => {
                 <Toolbar>
                     <Logo />
                     <Menu />
-                    <CartHeader productsInCart={productsInCart} />
+                    <CartHeader
+                        productsInCart={productsInCart}
+                        removeProductFromCart={removeProductFromCart}
+                    />
                 </Toolbar>
             </Container>
         </AppBar>

@@ -5,12 +5,16 @@ type Props = {
     productsInCart: {
         [id: number]: number
     }
+    removeProductFromCart: (id: number) => void
 }
 
-const CartHeader = ({ productsInCart }: Props) => {
+const CartHeader = ({ productsInCart, removeProductFromCart }: Props) => {
     return (
         <div>
-            <CartProductList productsInCart={productsInCart}></CartProductList>
+            <CartProductList
+                productsInCart={productsInCart}
+                removeProductFromCart={removeProductFromCart}
+            ></CartProductList>
             <CartTotal productsInCart={productsInCart}></CartTotal>
         </div>
     )

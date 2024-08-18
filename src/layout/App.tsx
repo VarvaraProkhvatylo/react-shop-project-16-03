@@ -39,10 +39,13 @@ const App = () => {
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header productsInCart={productsInCart} />
-            <button onClick={() => removeProductFromCart(1)}>
+            <Header
+                productsInCart={productsInCart}
+                removeProductFromCart={removeProductFromCart}
+            />
+            {/* <button onClick={() => removeProductFromCart(1)}>
                 Delete (id:1)
-            </button>
+            </button> */}
             <Routes>
                 <Route
                     path="/"
@@ -53,7 +56,7 @@ const App = () => {
                     element={
                         <CartPage
                             productsInCart={productsInCart}
-                            // removeProductFromCart={removeProductFromCart}
+                            removeProductFromCart={removeProductFromCart}
                         />
                     }
                 />
