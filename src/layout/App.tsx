@@ -10,6 +10,7 @@ import CartPage from 'pages/Cart/CartPage'
 import ProductsPage from 'pages/Products/ProductsPage'
 import PaymentPage from 'pages/Payment/PaymentPage'
 import { getProductsObject } from 'utils/productsArray'
+import { omit } from 'lodash'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -29,11 +30,7 @@ const App = () => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState) => {
-            let prevProductsInCart = { ...prevState }
-            delete prevProductsInCart[id]
-            return prevProductsInCart
-        })
+        setProductsInCart((prevState) => omit(prevState, id))
     }
 
     return (
