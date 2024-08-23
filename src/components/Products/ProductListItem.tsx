@@ -54,6 +54,7 @@ const ProductListItem = ({
                         onDecrementClick={onDecrementClick}
                         onIncrementClick={onIncrementClick}
                         count={count}
+                        min={1}
                     />
 
                     <div className="btns-wrapper">

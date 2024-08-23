@@ -34,6 +34,7 @@ const CartProductListItemExtended = ({
                         onIncrementClick={() =>
                             changeProductQuantity(product.id, productsCount + 1)
                         }
+                        min={0}
                     />
 
                     <Button
