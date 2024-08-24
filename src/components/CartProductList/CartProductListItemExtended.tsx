@@ -2,12 +2,14 @@ import { Button, Card, CardContent, Grid } from '@mui/material'
 import { Product } from 'utils/productsArray'
 import DeleteIcon from '@mui/icons-material/Delete'
 import Quantity from 'components/Quantity/Quantity'
+import { min } from 'lodash'
 
 type Props = {
     product: Product
     productsCount: number
     removeProductFromCart: (id: number) => void
     changeProductQuantity: (id: number, quantity: number) => void
+    deleted: (id: number, count: number) => void
 }
 
 const CartProductListItemExtended = ({
