@@ -16,11 +16,21 @@ type ProductsInCartType = {
     [id: number]: number
 }
 
+type ProductsLikeState = {
+    [id: number]: boolean
+}
+
 const App = () => {
     const [productsInCart, setProductsInCart] = useState<ProductsInCartType>({
         1: 5,
         2: 5,
     })
+
+    const [productsLikeState, setProductsLikeState] =
+        useState<ProductsLikeState>({
+            1: true,
+            2: true,
+        })
 
     const addProductsToCart = (id: number, count: number) => {
         setProductsInCart((prevState) => ({
@@ -47,7 +57,12 @@ const App = () => {
             <Routes>
                 <Route
                     path="/"
-                    element={<Home addProductsToCart={addProductsToCart} />}
+                    element={
+                        <Home
+                            addProductsToCart={addProductsToCart}
+                            productsLikeState={productsLikeState}
+                        />
+                    }
                 />
                 <Route
                     path="cart"
