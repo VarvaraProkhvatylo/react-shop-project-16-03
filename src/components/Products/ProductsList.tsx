@@ -7,11 +7,16 @@ type Props = {
     productsLikeState: {
         [id: number]: boolean
     }
+    likeProduct: (id: number, isLiked: boolean) => void
 }
 
 console.log(productsArray)
 
-const ProductsList = ({ addProductsToCart, productsLikeState }: Props) => {
+const ProductsList = ({
+    addProductsToCart,
+    productsLikeState,
+    likeProduct,
+}: Props) => {
     return (
         <>
             <Typography
@@ -43,6 +48,7 @@ const ProductsList = ({ addProductsToCart, productsLikeState }: Props) => {
                                 price={price}
                                 addProductsToCart={addProductsToCart}
                                 isLiked={productsLikeState[id]}
+                                likeProduct={likeProduct}
                             />
                         </Grid>
                     )

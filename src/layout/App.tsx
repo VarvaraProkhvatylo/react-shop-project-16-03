@@ -31,6 +31,13 @@ const App = () => {
             1: true,
             2: true,
         })
+    //////
+    const likeProduct = (id: number, isLiked: boolean) => {
+        setProductsLikeState((prevState) => ({
+            ...prevState,
+            [id]: isLiked ? false : true,
+        }))
+    }
 
     const addProductsToCart = (id: number, count: number) => {
         setProductsInCart((prevState) => ({
@@ -61,6 +68,7 @@ const App = () => {
                         <Home
                             addProductsToCart={addProductsToCart}
                             productsLikeState={productsLikeState}
+                            likeProduct={likeProduct}
                         />
                     }
                 />

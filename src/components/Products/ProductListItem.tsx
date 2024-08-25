@@ -14,7 +14,8 @@ type Props = {
     capacity: string
     price: number
     addProductsToCart: (count: number, id: number) => void
-    isLiked?: boolean
+    isLiked: boolean
+    likeProduct: (id: number, isLiked: boolean) => void
 }
 
 const ProductListItem = ({
@@ -27,6 +28,7 @@ const ProductListItem = ({
     price,
     addProductsToCart,
     isLiked,
+    likeProduct,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
 
@@ -38,6 +40,14 @@ const ProductListItem = ({
         setCount((prevCount) => prevCount + 1)
     }
 
+    ///
+    // const likeProduct = (id: number, isLiked: boolean) => {
+    //     setProductsLikeState((prevState) => ({
+    //         ...prevState,
+    //         [id]: isLiked ? true : false,
+    //     }))
+    // }
+
     return (
         <>
             <Card variant="outlined" className="product-list-item">
@@ -45,7 +55,11 @@ const ProductListItem = ({
                     <div className="product-image">
                         <img src={image} alt="" />
                     </div>
-                    <Button variant="outlined">
+                    <Button
+                        variant="outlined"
+                        onClick={() => likeProduct(id, isLiked)}
+                        // onClick={() => console.log('clicked')}
+                    >
                         {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                     </Button>
                     <h3 className="product-title">{title}</h3>
