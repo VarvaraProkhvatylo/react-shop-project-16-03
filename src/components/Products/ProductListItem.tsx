@@ -15,7 +15,6 @@ type Props = {
     price: number
     addProductsToCart: (count: number, id: number) => void
     isLiked: boolean
-    // likeProduct: (id: number, isLiked: boolean) => void
     toggleLikeState: (id: number) => void
 }
 
@@ -29,7 +28,6 @@ const ProductListItem = ({
     price,
     addProductsToCart,
     isLiked,
-    // likeProduct,
     toggleLikeState,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
@@ -41,14 +39,6 @@ const ProductListItem = ({
     const onIncrementClick = () => {
         setCount((prevCount) => prevCount + 1)
     }
-
-    ///
-    // const likeProduct = (id: number, isLiked: boolean) => {
-    //     setProductsLikeState((prevState) => ({
-    //         ...prevState,
-    //         [id]: isLiked ? true : false,
-    //     }))
-    // }
 
     return (
         <>

@@ -13,7 +13,6 @@ type Props = {
     changeProductQuantity: (id: number, quantity: number) => void
 
     isLiked: boolean
-    // likeProduct: (id: number, isLiked: boolean) => void
 
     productsLikeState: {
         [id: number]: boolean
@@ -28,7 +27,6 @@ const CartProductListItemExtended = ({
 
     isLiked,
     productsLikeState,
-    // likeProduct,
 }: Props) => {
     return (
         <Grid item xs={12} sm={6} md={4}>
