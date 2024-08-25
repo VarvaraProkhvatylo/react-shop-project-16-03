@@ -11,6 +11,10 @@ type Props = {
     CartItem?: any
     removeProductFromCart?: (id: number) => void
     changeProductQuantity?: (id: number, quantity: number) => void
+
+    productsLikeState: {
+        [id: number]: boolean
+    }
 }
 
 const CartProductList = ({
@@ -19,6 +23,8 @@ const CartProductList = ({
     CartItem = CartProductListItem,
     removeProductFromCart,
     changeProductQuantity,
+
+    productsLikeState,
 }: Props) => {
     return (
         <>
@@ -29,6 +35,7 @@ const CartProductList = ({
                     productsCount={productsInCart[+productId]}
                     removeProductFromCart={removeProductFromCart}
                     changeProductQuantity={changeProductQuantity}
+                    productsLikeState={productsLikeState}
                 />
             ))}
         </>

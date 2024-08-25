@@ -7,7 +7,7 @@ type Props = {
     productsLikeState: {
         [id: number]: boolean
     }
-    likeProduct: (id: number, isLiked: boolean) => void
+    toggleLikeState: (id: number) => void
 }
 
 console.log(productsArray)
@@ -15,7 +15,7 @@ console.log(productsArray)
 const ProductsList = ({
     addProductsToCart,
     productsLikeState,
-    likeProduct,
+    toggleLikeState,
 }: Props) => {
     return (
         <>
@@ -48,7 +48,7 @@ const ProductsList = ({
                                 price={price}
                                 addProductsToCart={addProductsToCart}
                                 isLiked={productsLikeState[id]}
-                                likeProduct={likeProduct}
+                                toggleLikeState={toggleLikeState}
                             />
                         </Grid>
                     )

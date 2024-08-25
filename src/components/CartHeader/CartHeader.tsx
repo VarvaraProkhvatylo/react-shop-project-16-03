@@ -5,12 +5,19 @@ type Props = {
     productsInCart: {
         [id: number]: number
     }
+
+    productsLikeState: {
+        [id: number]: boolean
+    }
 }
 
-const CartHeader = ({ productsInCart }: Props) => {
+const CartHeader = ({ productsInCart, productsLikeState }: Props) => {
     return (
         <div>
-            <CartProductList productsInCart={productsInCart}></CartProductList>
+            <CartProductList
+                productsInCart={productsInCart}
+                productsLikeState={productsLikeState}
+            ></CartProductList>
             <CartTotal productsInCart={productsInCart}></CartTotal>
         </div>
     )

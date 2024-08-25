@@ -28,17 +28,20 @@ const App = () => {
 
     const [productsLikeState, setProductsLikeState] =
         useState<ProductsLikeState>({
-            1: true,
-            2: true,
+            // 1: true,
+            // 2: true,
         })
-    //////
-    const likeProduct = (id: number, isLiked: boolean) => {
+
+    ///lesson
+
+    const toggleLikeState = (id: number) => {
         setProductsLikeState((prevState) => ({
             ...prevState,
-            [id]: isLiked ? false : true,
+            [id]: !prevState[id],
         }))
     }
 
+    ///
     const addProductsToCart = (id: number, count: number) => {
         setProductsInCart((prevState) => ({
             ...prevState,
@@ -60,7 +63,10 @@ const App = () => {
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header productsInCart={productsInCart} />
+            <Header
+                productsInCart={productsInCart}
+                productsLikeState={productsLikeState}
+            />
             <Routes>
                 <Route
                     path="/"
@@ -68,7 +74,7 @@ const App = () => {
                         <Home
                             addProductsToCart={addProductsToCart}
                             productsLikeState={productsLikeState}
-                            likeProduct={likeProduct}
+                            toggleLikeState={toggleLikeState}
                         />
                     }
                 />
@@ -79,6 +85,7 @@ const App = () => {
                             productsInCart={productsInCart}
                             removeProductFromCart={removeProductFromCart}
                             changeProductQuantity={changeProductQuantity}
+                            productsLikeState={productsLikeState}
                         />
                     }
                 />

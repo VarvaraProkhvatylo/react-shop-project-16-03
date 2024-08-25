@@ -9,9 +9,13 @@ type Props = {
     productsInCart: {
         [id: number]: number
     }
+
+    productsLikeState: {
+        [id: number]: boolean
+    }
 }
 
-const Header = ({ productsInCart }: Props) => {
+const Header = ({ productsInCart, productsLikeState }: Props) => {
     return (
         <AppBar
             position="static"
@@ -23,7 +27,10 @@ const Header = ({ productsInCart }: Props) => {
                 <Toolbar>
                     <Logo />
                     <Menu />
-                    <CartHeader productsInCart={productsInCart} />
+                    <CartHeader
+                        productsInCart={productsInCart}
+                        productsLikeState={productsLikeState}
+                    />
                 </Toolbar>
             </Container>
         </AppBar>

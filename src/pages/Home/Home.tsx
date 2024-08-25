@@ -7,16 +7,20 @@ type Props = {
     productsLikeState: {
         [id: number]: boolean
     }
-    likeProduct: (id: number, isLiked: boolean) => void
+    toggleLikeState: (id: number) => void
 }
 
-const Home = ({ addProductsToCart, productsLikeState, likeProduct }: Props) => {
+const Home = ({
+    addProductsToCart,
+    productsLikeState,
+    toggleLikeState,
+}: Props) => {
     return (
         <Container className="main-container" component={'div'}>
             <ProductsList
                 addProductsToCart={addProductsToCart}
                 productsLikeState={productsLikeState}
-                likeProduct={likeProduct}
+                toggleLikeState={toggleLikeState}
             />
             <Reviews />
         </Container>
