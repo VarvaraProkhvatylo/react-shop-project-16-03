@@ -6,8 +6,6 @@ type LikeProductsState = {
 }
 
 const initialState: LikeProductsState = {
-    1: true,
-    2: true,
 }
 
 export const likeSlice = createSlice({
@@ -24,6 +22,17 @@ export const likeSlice = createSlice({
         }),
     },
 })
+
+// export const likeSlice1 = createSlice({
+//     name:"like",
+//     initialState,
+//     reducers: {
+//         toggleLike: (state, action) => ({
+//         ...state,
+//         state,[action.payload] : !state[action.payload]
+//     })
+//     },
+// })
 
 export const { addLike, removeLike } = likeSlice.actions
 
