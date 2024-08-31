@@ -13,7 +13,14 @@ const initialState: ProductsInCart = {
 export const cartSlice = createSlice({
     name: "cart",
     initialState,
-    reducers: {},
+    reducers: {
+        addProductToCart: (state, action) => ({
+            ...state,
+            [action.payload.id]: (state[action.payload.id] || 0) + action.payload.count,
+        })
+    },
 })
+
+export const {addProductToCart} = cartSlice.actions
 
 export default cartSlice.reducer
