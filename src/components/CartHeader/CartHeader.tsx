@@ -10,6 +10,7 @@ type Props = {
 
 const CartHeader = (props: Props) => {
     const productsInCart = useAppSelector((state) => state.productsInCart)
+
     return (
         <div>
             <CartProductList productsInCart={productsInCart}></CartProductList>

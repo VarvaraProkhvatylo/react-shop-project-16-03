@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import likeSlice, { addLike, removeLike } from 'store/likeSlice'
-import { removeProductFromCart } from 'store/cartSlice'
+import { changeProductQuantity, removeProductFromCart } from 'store/cartSlice'
 
 type Props = {
     product: Product
@@ -16,11 +16,7 @@ type Props = {
     changeProductQuantity: (id: number, quantity: number) => void
 }
 
-const CartProductListItemExtended = ({
-    product,
-    productsCount,
-    changeProductQuantity,
-}: Props) => {
+const CartProductListItemExtended = ({ product, productsCount }: Props) => {
     const isLiked = useAppSelector(
         (state) => state.productsLikeState[product.id]
     )
@@ -52,13 +48,20 @@ const CartProductListItemExtended = ({
                             if (productsCount === 1) {
                                 dispatch(removeProductFromCart(product.id))
                             } else
-                                changeProductQuantity(
-                                    product.id,
-                                    productsCount - 1
+                                dispatch(
+                                    changeProductQuantity({
+                                        id: product.id,
+                                        quantity: productsCount - 1,
+                                    })
                                 )
                         }}
                         onIncrementClick={() =>
-                            changeProductQuantity(product.id, productsCount + 1)
+                            dispatch(
+                                changeProductQuantity({
+                                    id: product.id,
+                                    quantity: productsCount + 1,
+                                })
+                            )
                         }
                         minCount={0}
                     />
