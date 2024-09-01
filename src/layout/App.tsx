@@ -11,6 +11,7 @@ import ProductsPage from 'pages/Products/ProductsPage'
 import PaymentPage from 'pages/Payment/PaymentPage'
 import { getProductsObject } from 'utils/productsArray'
 import { omit } from 'lodash'
+import CheckoutPage from 'pages/Checkout/CheckoutPage'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -61,6 +62,7 @@ const App = () => {
                 />
                 <Route path="payment" element={<PaymentPage />} />
                 <Route path="products" element={<ProductsPage />} />
+                <Route path="checkout" element={<CheckoutPage />} />
             </Routes>
             <Footer />
         </StyledEngineProvider>

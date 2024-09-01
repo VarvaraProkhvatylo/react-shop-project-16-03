@@ -3,6 +3,8 @@ import CartTotal from '../../components/CartTotal/CartTotal'
 import CartProductList from 'components/CartProductList/CartProductList'
 import CartProductListItemExtended from 'components/CartProductList/CartProductListItemExtended'
 import { useAppSelector } from 'store/hooks'
+import CheckoutPage from 'pages/Checkout/CheckoutPage'
+import { Link } from 'react-router-dom'
 
 type Props = {
     productsInCart: {
@@ -34,6 +36,8 @@ const CartPage = ({ removeProductFromCart, changeProductQuantity }: Props) => {
                 </Grid>
 
                 <CartTotal productsInCart={productsInCart}></CartTotal>
+
+                <Link to="/checkout">Proceed to checkout </Link>
             </Container>
         </div>
     )
